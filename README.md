@@ -2,6 +2,8 @@
 
 > TypeScript decorator for running a check before running a method.
 
+[![NPM](https://nodei.co/npm/ts-guard-decorator.png?compact=true)](https://nodei.co/npm/ts-guard-decorator)
+
 
 ## Installation
 
@@ -47,9 +49,9 @@ class MyClass {
 2. A function reference and arguments.
 
 ```typescript
-const myGuardFunc: (any, any) => boolean = (arg1, arg2) => {
+function myGuardFunc(arg1: any, arg2: any): boolean {
   return arg1 === arg2;
-};
+}
 
 class MyClass {
   @guard(myGuardFunc, 1, 1)
