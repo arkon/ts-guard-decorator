@@ -11,7 +11,7 @@
     "outDir": "dist/"
   },
   "include": [
-    "guard.ts",
+    "guard.ts"
   ],
   "compileOnSave": false,
   "buildOnSave": false

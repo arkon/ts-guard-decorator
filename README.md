@@ -26,27 +26,25 @@ class MyClass {
 }
 ```
 
-The guard accepts 2 types of parameters:
-
-1. A boolean expression (i.e. something that evaluates to `true` or `false`).
+This is equivalent to writing:
 
 ```typescript
 class MyClass {
-  @guard(true)
-  myFunc1() {}  // runs
-
-  @guard(false)
-  myFunc2() {}  // won't run
-
-  @guard(1 === 1)
-  myFunc3() {}  // runs
-
-  @guard(1 === 2)
-  myFunc4() {}  // won't run
+  myFunc() {
+    if (typeof window === 'undefined') {
+      return;
+    }
+    // ...
+  }
 }
 ```
 
-2. A function reference and arguments.
+
+### Options
+
+The guard accepts 2 arguments:
+1. A boolean expression (i.e. something that evaluates to `true` or `false`) indicating whether the method should run.
+2. A optional return value if the method should _not_ run.
 
 ```typescript
 function myGuardFunc(arg1: any, arg2: any): boolean {
@@ -54,10 +52,34 @@ function myGuardFunc(arg1: any, arg2: any): boolean {
 }
 
 class MyClass {
-  @guard(myGuardFunc, 1, 1)
-  myFunc1() {}  // runs
+  @guard(true)
+  myFunc1() {
+    return true;
+  }  //=> true
 
-  @guard(myGuardFunc, 1, 2)
-  myFunc2() {}  // won't run
+  @guard(false)
+  myFunc2() {
+    return true;
+  }  //=> undefined
+
+  @guard(1 === 1)
+  myFunc3() {
+    return true;
+  }  //=> true
+
+  @guard(1 === 2, 'hello')
+  myFunc4() {
+    return true;
+  }  //=> "hello"
+
+  @guard(myGuardFunc(1, 1), 'hello')
+  myFunc5() {
+    return true;
+  }  //=> true
+
+  @guard(myGuardFunc(1, 2), 'hello')
+  myFunc6() {
+    return true;
+  }  //=> "hello"
 }
 ```

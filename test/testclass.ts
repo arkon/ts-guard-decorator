@@ -1,41 +1,41 @@
 import guard from '../dist/guard';
 
-const dummyGuard = (bool: boolean) => {
+function dummyGuard(bool: boolean) {
   return bool;
-};
+}
 
 export class TestClass {
-  noGuard(): string {
-    return 'ran';
+  noGuard(): boolean {
+    return true;
   }
 
   @guard(true)
-  guardTrue(): string {
-    return 'ran';
+  guardTrue(): boolean {
+    return true;
   }
 
   @guard(false)
-  guardFalse(): string {
-    return 'ran';
+  guardFalse(): boolean {
+    return true;
   }
 
   @guard(dummyGuard(true))
-  guardTrueFunc(): string {
-    return 'ran';
+  guardTrueFunc(): boolean {
+    return true;
   }
 
   @guard(dummyGuard(false))
-  guardFalseFunc(): string {
-    return 'ran';
+  guardFalseFunc(): boolean {
+    return true;
   }
 
-  @guard(dummyGuard, true)
-  guardTrueFuncArgs(): string {
-    return 'ran';
+  @guard(true, 'hello')
+  guardTrueRetVal(): boolean {
+    return true;
   }
 
-  @guard(dummyGuard, false)
-  guardFalseFuncArgs(): string {
-    return 'ran';
+  @guard(false, 'hello')
+  guardFalseRetVal(): boolean {
+    return true;
   }
 }

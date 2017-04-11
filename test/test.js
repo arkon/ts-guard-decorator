@@ -2,11 +2,11 @@ import { test } from 'ava';
 import { TestClass } from './testclass';
 
 test('No guard', t => {
-  t.is(new TestClass().noGuard(), 'ran');
+  t.true(new TestClass().noGuard());
 });
 
 test('Guard with `true`', t => {
-  t.is(new TestClass().guardTrue(), 'ran');
+  t.true(new TestClass().guardTrue());
 });
 
 test('Guard with `false`', t => {
@@ -14,17 +14,17 @@ test('Guard with `false`', t => {
 });
 
 test('Guard with invoked function returning `true`', t => {
-  t.is(new TestClass().guardTrueFunc(), 'ran');
+  t.true(new TestClass().guardTrueFunc());
 });
 
 test('Guard with invoked function returning `false`', t => {
   t.is(new TestClass().guardFalseFunc(), undefined);
 });
 
-test('Guard with function and args returning `true`', t => {
-  t.is(new TestClass().guardTrueFuncArgs(), 'ran');
+test('Guard with return value but is `true`', t => {
+  t.true(new TestClass().guardTrueRetVal());
 });
 
-test('Guard with function and args returning `false`', t => {
-  t.is(new TestClass().guardFalseFuncArgs(), undefined);
+test('Guard with return value and is `false`', t => {
+  t.is(new TestClass().guardFalseRetVal(), 'hello');
 });
