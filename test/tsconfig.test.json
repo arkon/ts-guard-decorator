@@ -6,7 +6,6 @@
     "noUnusedLocals": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "declaration": true,
     "skipLibCheck": true
   },
   "include": [

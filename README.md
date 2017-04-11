@@ -40,7 +40,7 @@ class MyClass {
 ```
 
 
-### Options
+### Arguments
 
 The guard accepts 2 arguments:
 1. A boolean expression (i.e. something that evaluates to `true` or `false`) indicating whether the method should run.

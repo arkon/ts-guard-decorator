@@ -13,5 +13,4 @@ node_modules
 
 # Built files
 dist/
-test/testclass.d.ts
 test/testclass.js

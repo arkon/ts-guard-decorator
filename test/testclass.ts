@@ -1,4 +1,4 @@
-import guard from '../dist/guard';
+import guard from '../';
 
 function dummyGuard(bool: boolean) {
   return bool;
