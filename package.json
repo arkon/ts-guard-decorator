@@ -21,7 +21,8 @@
   "scripts": {
     "build": "tsc",
     "build:test": "tsc --project ./test/tsconfig.test.json",
-    "test": "npm run build:test && ava ./test/test.js"
+    "test": "npm run build:test && ava ./test/test.js",
+    "prepublish": "npm run build && npm test"
   },
   "devDependencies": {
     "ava": "^0.19.1",
