@@ -1,0 +1,17 @@
+# OS generated files
+.DS_Store
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Logs
+logs
+*.log
+
+# Node files
+node_modules
+
+# Built files
+dist/
+test/testclass.d.ts
+test/testclass.js

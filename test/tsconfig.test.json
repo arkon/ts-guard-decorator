@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "declaration": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "testclass.ts"
+  ],
+  "compileOnSave": false,
+  "buildOnSave": false
+}

@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "declaration": true,
+    "skipLibCheck": true,
+    "outDir": "dist/"
+  },
+  "include": [
+    "guard.ts",
+  ],
+  "compileOnSave": false,
+  "buildOnSave": false
+}

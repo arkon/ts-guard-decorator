@@ -1,0 +1,30 @@
+{
+  "name": "ts-guard-decorator",
+  "version": "0.0.0",
+  "description": "TypeScript decorator for running a check before running a method.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arkon/ts-guard-decorator.git"
+  },
+  "homepage": "https://github.com/arkon/ts-guard-decorator/",
+  "bugs": {
+    "url": "https://github.com/arkon/ts-guard-decorator/issues"
+  },
+  "files": [
+    "dist/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "author": "Eugene Cheung",
+  "license": "MIT",
+  "main": "dist/guard.js",
+  "scripts": {
+    "build": "tsc",
+    "build:test": "tsc --project ./test/tsconfig.test.json",
+    "test": "npm run build:test && ava ./test/test.js"
+  },
+  "devDependencies": {
+    "ava": "^0.19.1",
+    "typescript": "^2.2.2"
+  }
+}
