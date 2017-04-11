@@ -17,7 +17,8 @@
   ],
   "author": "Eugene Cheung",
   "license": "MIT",
-  "main": "dist/guard.js",
+  "main": "./dist/guard.js",
+  "typings": "./dist/guard.d.ts",
   "scripts": {
     "build": "tsc",
     "build:test": "tsc --project ./test/tsconfig.test.json",
