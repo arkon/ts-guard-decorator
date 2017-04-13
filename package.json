@@ -1,6 +1,6 @@
 {
   "name": "ts-guard-decorator",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Decorator for running a check before running a method.",
   "repository": {
     "type": "git",
