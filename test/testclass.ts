@@ -1,7 +1,7 @@
 import guard from '../';
 
-function dummyGuard(bool: boolean) {
-  return bool;
+function testGuardFunc(arg1: any, arg2: any): boolean {
+  return arg1 === arg2;
 }
 
 export class TestClass {
@@ -19,16 +19,6 @@ export class TestClass {
     return true;
   }
 
-  @guard(dummyGuard(true))
-  guardTrueFunc(): boolean {
-    return true;
-  }
-
-  @guard(dummyGuard(false))
-  guardFalseFunc(): boolean {
-    return true;
-  }
-
   @guard(true, 'hello')
   guardTrueRetVal(): boolean {
     return true;
@@ -36,6 +26,16 @@ export class TestClass {
 
   @guard(false, 'hello')
   guardFalseRetVal(): boolean {
+    return true;
+  }
+
+  @guard(testGuardFunc(1, 1), 'hello')
+  guardTrueFunc(): boolean {
+    return true;
+  }
+
+  @guard(testGuardFunc(1, 2), 'hello')
+  guardFalseFunc(): boolean {
     return true;
   }
 }

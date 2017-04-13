@@ -1,6 +1,6 @@
 # ts-guard-decorator 🛡
 
-> TypeScript decorator for running a check before running a method.
+> Decorator for running a check before running a method.
 
 [![NPM](https://nodei.co/npm/ts-guard-decorator.png?compact=true)](https://nodei.co/npm/ts-guard-decorator)
 
@@ -14,7 +14,9 @@ npm install --save ts-guard-decorator
 
 ## Usage
 
-```typescript
+Decorators are supported in [TypeScript](https://www.typescriptlang.org/docs/handbook/decorators.html) or with [Babel](https://babeljs.io/docs/plugins/transform-decorators/).
+
+```js
 import guard from 'ts-guard-decorator';
 
 class MyClass {
@@ -28,7 +30,7 @@ class MyClass {
 
 This is equivalent to writing:
 
-```typescript
+```js
 class MyClass {
   myFunc() {
     if (typeof window === 'undefined') {
@@ -46,39 +48,39 @@ The guard accepts 2 arguments:
 1. A boolean expression (i.e. something that evaluates to `true` or `false`) indicating whether the method should run.
 2. A optional return value if the method should _not_ run.
 
-```typescript
-function myGuardFunc(arg1: any, arg2: any): boolean {
+```js
+function testGuardFunc(arg1, arg2) {
   return arg1 === arg2;
 }
 
-class MyClass {
+class TestClass {
   @guard(true)
-  myFunc1() {
+  guardTrue() {
     return true;
   }  //=> true
 
   @guard(false)
-  myFunc2() {
+  guardFalse() {
     return true;
   }  //=> undefined
 
-  @guard(1 === 1)
-  myFunc3() {
+  @guard(true, 'hello')
+  guardTrueRetVal() {
     return true;
   }  //=> true
 
-  @guard(1 === 2, 'hello')
-  myFunc4() {
+  @guard(false, 'hello')
+  guardFalseRetVal() {
     return true;
   }  //=> "hello"
 
-  @guard(myGuardFunc(1, 1), 'hello')
-  myFunc5() {
+  @guard(testGuardFunc(1, 1), 'hello')
+  guardTrueFunc() {
     return true;
   }  //=> true
 
-  @guard(myGuardFunc(1, 2), 'hello')
-  myFunc6() {
+  @guard(testGuardFunc(1, 2), 'hello')
+  guardFalseFunc() {
     return true;
   }  //=> "hello"
 }
